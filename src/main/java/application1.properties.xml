@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="subject2" class="com.ab.autowiringByType.Subject" >
+		<property name="subjectId" value="124" />
+		<property name="subjectName" value="JAVA" />
+	</bean>
+	
+	<bean id="student" class="com.ab.autowiringByType.Student"   autowire="byType" >
+		<property name="id" value="151" />
+		<property name="name" value="AB" />
+	</bean>
+
+<!-- Exception  =  NoUniqueBeanDefinitionException: No qualifying bean of type 'com.ab.autowiringByType.Subject' available: expected single matching bean but found 2: subject1,subject2
+        For  below  code  -->
+
+	<!-- <bean id="subject1" class="com.ab.autowiringByType.Subject">
+		<property name="subjectId" value="123" />
+		<property name="subjectName" value="PYTHON" />
+	</bean>
+
+	<bean id="subject2" class="com.ab.autowiringByType.Subject">
+		<property name="subjectId" value="124" />
+		<property name="subjectName" value="JAVA" />
+	</bean>
+
+	<bean id="student" class="com.ab.autowiringByType.Student"   autowire="byType">
+		<property name="id" value="151" />
+		<property name="name" value="AB" />
+	</bean> -->
+   
+   </beans>
